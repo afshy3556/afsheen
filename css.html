@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <title>Training Institute</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #f8f9f8;
+      color: #333;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    h2, h1, h3, h5, b {
+      color: #237749;
+    }
+
+    header {
+      background-color: #d4edda;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-left img, .logo-right img {
+      height: 50px;
+      width: auto;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    header nav a:hover {
+      color: #218838;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 400px;
+      color: white;
+    }
+
+    .slideshow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .slideshow input[type="radio"] {
+      display: none;
+    }
+
+    .slides {
+      display: flex;
+      width: 200%; /* Two slides (100% each) */
+      height: 100%;
+      transition: transform 1.5s ease;
+    }
+
+    .slide {
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    #slide1:checked ~ .slides {
+      transform: translateX(0);
+    }
+
+    #slide2:checked ~ .slides {
+      transform: translateX(-50%);
+    }
+
+    .navigation {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      z-index: 1;
+    }
+
+    .navigation label {
+      display: block;
+      width: 12px;
+      height: 12px;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="radio"]:checked + label {
+      background: #218838;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-content h3 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    .hero-content button {
+      background-color: #10461d;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .hero-content button:hover {
+      background-color: #218838;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .grid-item {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #d4edda;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #237749;
+      margin: 0 10px;
+      font-size: 1.5em;
+    }
+
+    footer a:hover {
+      color: #69776c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-left"><img src="logo1.png" alt="Logo Left"></div>
+      <div>
+        <a href="#courses">Courses</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="logo-right"><img src="tevta.png" alt="Logo Right"></div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <!-- Slideshow Wrapper -->
+    <div class="slideshow">
+      <input type="radio" name="slide" id="slide1" checked>
+      <input type="radio" name="slide" id="slide2">
+
+      <!-- Slideshow Images -->
+      <div class="slides">
+        <div class="slide" style="background-image: url('a2.png');"></div>
+        <div class="slide" style="background-image: url('a1.png');"></div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="navigation">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+      </div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <h1>Welcome to the Technical Training Institute</h1>
+      <h3>Start your journey with us today.</h3>
+      <button>
+        <a href="form.html" style="color: white; text-decoration: none;">Apply Now</a>
+      </button>
+    </div>
+  </section>
+
+  <!-- Other content remains unchanged -->
+  <!-- Add the rest of your HTML content here -->
+
+</body>
+</html>
